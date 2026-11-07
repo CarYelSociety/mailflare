@@ -19,6 +19,7 @@ import { SidebarAside, MobileTopBar } from "@/components/sidebar-aside";
 import { SidebarResizeBoundary } from "@/components/sidebar-resize-boundary";
 import { ShortcutsProvider } from "@/components/shortcuts";
 import { RouteTitle } from "@/components/route-title";
+import { MailSearchProvider } from "@/components/mail-search/mail-search-context";
 
 const primaryOnlyPrefixes = [
   "/agent",
@@ -53,6 +54,7 @@ export default function DashboardLayout({
       <SidebarProvider expandedWidth={256} mobileOverlay>
       <MailboxProvider>
         <ComposeProvider>
+<MailSearchProvider>
           <ShortcutsProvider>
             <RouteTitle />
           <div className="grid h-dvh grid-cols-[minmax(0,1fr)] md:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] overflow-hidden bg-[#f6f8fc] transition-[grid-template-columns]" style={{ transitionDuration: "var(--sidebar-transition-duration)" }}>
